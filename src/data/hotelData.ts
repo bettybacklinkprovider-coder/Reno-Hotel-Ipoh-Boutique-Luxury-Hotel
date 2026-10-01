@@ -1,3 +1,28 @@
+import heroImg from '../assets/images/hero_reno_hotel_1790847442817.jpg';
+import deluxeSuiteImg from '../assets/images/deluxe_suite_reno_1790847456833.jpg';
+import hotelLoungeImg from '../assets/images/hotel_lounge_reno_1790847468712.jpg';
+import executiveBathImg from '../assets/images/executive_bath_reno_1790847480826.jpg';
+import heritageSuiteImg from '../assets/images/heritage_suite_reno_1790853625103.jpg';
+import familyResidenceImg from '../assets/images/family_residence_reno_1790853638550.jpg';
+
+import ipohCoffeeTeaImg from '../assets/images/ipoh_coffee_tea_1790856148216.jpg';
+import bespokeConciergeImg from '../assets/images/bespoke_concierge_1790856161420.jpg';
+import spaAromatherapyImg from '../assets/images/spa_aromatherapy_1790856173700.jpg';
+import perakLocationImg from '../assets/images/perak_location_1790856184623.jpg';
+
+export {
+  heroImg,
+  deluxeSuiteImg,
+  hotelLoungeImg,
+  executiveBathImg,
+  heritageSuiteImg,
+  familyResidenceImg,
+  ipohCoffeeTeaImg,
+  bespokeConciergeImg,
+  spaAromatherapyImg,
+  perakLocationImg,
+};
+
 export interface Room {
   id: string;
   name: string;
@@ -18,6 +43,14 @@ export interface GalleryItem {
   category: 'rooms' | 'interior' | 'dining' | 'surroundings';
   image: string;
   caption: string;
+}
+
+export interface ExperienceItem {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  image: string;
 }
 
 export const HOTEL_DETAILS = {
@@ -46,7 +79,7 @@ export const ROOMS_DATA: Room[] = [
     size: "65 m² / 700 ft²",
     capacity: "2 Adults + 1 Child",
     bed: "1 Super King Bed",
-    image: "/src/assets/images/deluxe_suite_reno_1790847456833.jpg",
+    image: deluxeSuiteImg,
     description: "Designed for discerning travelers seeking peak elegance. The Royal Executive Suite features bespoke velvet furniture, a marble master bath with a deep soaking tub, and floor-to-ceiling windows overlooking Ipoh's verdant skyline.",
     amenities: [
       "Freestanding Soaking Tub",
@@ -68,7 +101,7 @@ export const ROOMS_DATA: Room[] = [
     size: "50 m² / 538 ft²",
     capacity: "2 Adults",
     bed: "1 Luxury King Bed",
-    image: "/src/assets/images/hotel_lounge_reno_1790847468712.jpg",
+    image: heritageSuiteImg,
     description: "Honoring Ipoh's historic legacy, this suite fuses handcrafted teakwood accents, custom brass fixtures, and soft mood lighting with cutting-edge comforts.",
     amenities: [
       "Teakwood Artisanal Furniture",
@@ -88,7 +121,7 @@ export const ROOMS_DATA: Room[] = [
     size: "38 m² / 409 ft²",
     capacity: "2 Adults",
     bed: "1 Plush King Bed",
-    image: "/src/assets/images/executive_bath_reno_1790847480826.jpg",
+    image: executiveBathImg,
     description: "A tranquil haven crafted with plush headboards, warm ambient cove illumination, and state-of-the-art acoustics for pure rejuvenation after exploring Ipoh.",
     amenities: [
       "Plush Pillow-Top Mattress",
@@ -107,7 +140,7 @@ export const ROOMS_DATA: Room[] = [
     size: "80 m² / 860 ft²",
     capacity: "4 Adults + 1 Child",
     bed: "2 Queen Beds or 1 King + 2 Twin Beds",
-    image: "/src/assets/images/hero_reno_hotel_1790847442817.jpg",
+    image: familyResidenceImg,
     description: "Designed specifically for family vacations or small groups wanting privacy without compromising on five-star luxury. Features dual vanity bathrooms and a central living salon.",
     amenities: [
       "Two Separate Bedrooms",
@@ -126,7 +159,7 @@ export const ROOMS_DATA: Room[] = [
     size: "35 m² / 376 ft²",
     capacity: "2 Adults",
     bed: "2 Twin Bed Systems",
-    image: "/src/assets/images/deluxe_suite_reno_1790847456833.jpg",
+    image: deluxeSuiteImg,
     description: "Perfect for corporate guests or companions exploring Ipoh's vibrant culture, offering custom ergonomic beds and ultra-quiet room acoustics.",
     amenities: [
       "Ergonomic Twin Mattresses",
@@ -144,70 +177,102 @@ export const GALLERY_DATA: GalleryItem[] = [
     id: "g1",
     title: "Reno Hotel Grand Facade at Twilight",
     category: "surroundings",
-    image: "/src/assets/images/hero_reno_hotel_1790847442817.jpg",
+    image: heroImg,
     caption: "The illuminated exterior displaying sophisticated purple and gold accents."
   },
   {
     id: "g2",
     title: "Royal Executive Bedroom Suite",
     category: "rooms",
-    image: "/src/assets/images/deluxe_suite_reno_1790847456833.jpg",
+    image: deluxeSuiteImg,
     caption: "High thread-count linens, custom headboard, and ambient bedside lighting."
   },
   {
     id: "g3",
     title: "Violet Velvet Lounge & Tea Parlor",
     category: "dining",
-    image: "/src/assets/images/hotel_lounge_reno_1790847468712.jpg",
+    image: hotelLoungeImg,
     caption: "An intimate sanctuary for enjoying Ipoh White Coffee and afternoon high tea."
   },
   {
     id: "g4",
     title: "Marble Soaking Bath Sanctuary",
     category: "interior",
-    image: "/src/assets/images/executive_bath_reno_1790847480826.jpg",
+    image: executiveBathImg,
     caption: "Deep freestanding soaking tub with Italian marble and custom bronze fittings."
   },
   {
     id: "g5",
-    title: "Bespoke Guest Lobby Reception",
-    category: "interior",
-    image: "/src/assets/images/hotel_lounge_reno_1790847468712.jpg",
-    caption: "Personalized check-in experience with signature floral welcome elixir."
+    title: "Ipoh Heritage Colonial Suite",
+    category: "rooms",
+    image: heritageSuiteImg,
+    caption: "Teakwood artisanal details and in-room Ipoh white coffee brewing bar."
   },
   {
     id: "g6",
-    title: "Ipoh Heritage Corridor",
+    title: "Boutique Family Residence Salon",
+    category: "rooms",
+    image: familyResidenceImg,
+    caption: "Spacious multi-bedroom accommodation designed for serene group getaways."
+  },
+  {
+    id: "g7",
+    title: "Artisanal Ipoh White Coffee Service",
+    category: "dining",
+    image: ipohCoffeeTeaImg,
+    caption: "Freshly brewed Ipoh white coffee accompanied by delicate French pastries."
+  },
+  {
+    id: "g8",
+    title: "24/7 Bespoke Concierge Desk",
+    category: "interior",
+    image: bespokeConciergeImg,
+    caption: "Dedicated front desk reception providing tailored Perak itinerary arrangements."
+  },
+  {
+    id: "g9",
+    title: "Aromatherapy & Lavender Soaks",
+    category: "interior",
+    image: spaAromatherapyImg,
+    caption: "In-suite marble soaking bath rituals infused with organic lavender essential oils."
+  },
+  {
+    id: "g10",
+    title: "Perak Limestone Karst Sunset View",
     category: "surroundings",
-    image: "/src/assets/images/hero_reno_hotel_1790847442817.jpg",
-    caption: "Subtle architecture blending local Perak heritage with boutique modernism."
+    image: perakLocationImg,
+    caption: "Panoramic vistas of Perak's famous limestone hills surrounding Reno Hotel."
   }
 ];
 
-export const EXPERIENCES = [
+export const EXPERIENCES: ExperienceItem[] = [
   {
     id: "exp-1",
     title: "Artisanal Ipoh Coffee & High Tea",
     description: "Savor world-renowned Ipoh white coffee brewed fresh alongside delicate French pastries in our Violet Lounge.",
-    icon: "Coffee"
+    icon: "Coffee",
+    image: ipohCoffeeTeaImg
   },
   {
     id: "exp-2",
     title: "24/7 Bespoke Concierge",
     description: "Our dedicated team arranges private transportation, restaurant reservations at top Ipoh dim sum spots, and guided cave tours.",
-    icon: "Concierge"
+    icon: "Concierge",
+    image: bespokeConciergeImg
   },
   {
     id: "exp-3",
     title: "Spa & Aromatherapy Soaks",
-    description: "Unwind with our signature lavender-infused essential oils, plush plush robes, and in-suite spa bath rituals.",
-    icon: "Sparkles"
+    description: "Unwind with our signature lavender-infused essential oils, plush robes, and in-suite spa bath rituals.",
+    icon: "Sparkles",
+    image: spaAromatherapyImg
   },
   {
     id: "exp-4",
     title: "Prime Location in Perak",
     description: "Minutes away from Ipoh Railway Station, Old Town Heritage Trail, Concubine Lane, and limestone karst cave temples.",
-    icon: "MapPin"
+    icon: "MapPin",
+    image: perakLocationImg
   }
 ];
 

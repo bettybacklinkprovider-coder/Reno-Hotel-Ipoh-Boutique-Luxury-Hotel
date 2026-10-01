@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GALLERY_DATA, GalleryItem, HOTEL_DETAILS } from '../data/hotelData';
+import { GALLERY_DATA, GalleryItem, HOTEL_DETAILS, heroImg, executiveBathImg, ipohCoffeeTeaImg, bespokeConciergeImg } from '../data/hotelData';
 import { Sparkles, Maximize2, X, ChevronRight, Award, Shield, Heart, Coffee, Star } from 'lucide-react';
 
 interface AboutGalleryPageProps {
@@ -55,7 +55,7 @@ export const AboutGalleryPage: React.FC<AboutGalleryPageProps> = ({ onOpenBookin
         <div className="relative">
           <div className="rounded-2xl overflow-hidden border border-amber-500/30 shadow-2xl">
             <img
-              src="/src/assets/images/hero_reno_hotel_1790847442817.jpg"
+              src={heroImg}
               alt="Reno Hotel Ipoh Story"
               className="w-full h-[450px] object-cover"
               referrerPolicy="no-referrer"
@@ -77,34 +77,67 @@ export const AboutGalleryPage: React.FC<AboutGalleryPageProps> = ({ onOpenBookin
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-[#1d0a36] p-6 rounded-2xl border border-purple-800/40 space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 text-amber-400 flex items-center justify-center">
-              <Award className="w-5 h-5" />
+          <div className="bg-[#1d0a36] rounded-2xl border border-purple-800/40 overflow-hidden group hover:border-amber-400/40 transition-colors shadow-xl flex flex-col justify-between">
+            <div className="relative h-44 overflow-hidden">
+              <img
+                src={executiveBathImg}
+                alt="Uncompromising Luxury"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1d0a36] via-transparent to-transparent" />
+              <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-purple-950/80 border border-amber-400/30 flex items-center justify-center text-amber-400">
+                <Award className="w-5 h-5" />
+              </div>
             </div>
-            <h3 className="font-serif text-xl font-bold text-white">Uncompromising Luxury</h3>
-            <p className="text-xs text-purple-200/80 leading-relaxed font-light">
-              We select Egyptian cotton linens, freestanding marble soaks, and state-of-the-art acoustic soundproofing so every night is tranquil.
-            </p>
+            <div className="p-6 pt-2 space-y-2">
+              <h3 className="font-serif text-xl font-bold text-white">Uncompromising Luxury</h3>
+              <p className="text-xs text-purple-200/80 leading-relaxed font-light">
+                We select Egyptian cotton linens, freestanding marble soaks, and state-of-the-art acoustic soundproofing so every night is tranquil.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-[#1d0a36] p-6 rounded-2xl border border-purple-800/40 space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 text-amber-400 flex items-center justify-center">
-              <Coffee className="w-5 h-5" />
+          <div className="bg-[#1d0a36] rounded-2xl border border-purple-800/40 overflow-hidden group hover:border-amber-400/40 transition-colors shadow-xl flex flex-col justify-between">
+            <div className="relative h-44 overflow-hidden">
+              <img
+                src={ipohCoffeeTeaImg}
+                alt="Authentic Ipoh Flavors"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1d0a36] via-transparent to-transparent" />
+              <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-purple-950/80 border border-amber-400/30 flex items-center justify-center text-amber-400">
+                <Coffee className="w-5 h-5" />
+              </div>
             </div>
-            <h3 className="font-serif text-xl font-bold text-white">Authentic Ipoh Flavors</h3>
-            <p className="text-xs text-purple-200/80 leading-relaxed font-light">
-              Enjoy complimentary morning white coffee brewed from local roast beans, along with fresh kaya tarts and gourmet international options.
-            </p>
+            <div className="p-6 pt-2 space-y-2">
+              <h3 className="font-serif text-xl font-bold text-white">Authentic Ipoh Flavors</h3>
+              <p className="text-xs text-purple-200/80 leading-relaxed font-light">
+                Enjoy complimentary morning white coffee brewed from local roast beans, along with fresh kaya tarts and gourmet international options.
+              </p>
+            </div>
           </div>
 
-          <div className="bg-[#1d0a36] p-6 rounded-2xl border border-purple-800/40 space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 text-amber-400 flex items-center justify-center">
-              <Heart className="w-5 h-5" />
+          <div className="bg-[#1d0a36] rounded-2xl border border-purple-800/40 overflow-hidden group hover:border-amber-400/40 transition-colors shadow-xl flex flex-col justify-between">
+            <div className="relative h-44 overflow-hidden">
+              <img
+                src={bespokeConciergeImg}
+                alt="Attentive Concierge Care"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1d0a36] via-transparent to-transparent" />
+              <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-purple-950/80 border border-amber-400/30 flex items-center justify-center text-amber-400">
+                <Heart className="w-5 h-5" />
+              </div>
             </div>
-            <h3 className="font-serif text-xl font-bold text-white">Attentive Concierge Care</h3>
-            <p className="text-xs text-purple-200/80 leading-relaxed font-light">
-              From private cave tour recommendations to airport transfers, our staff ensures your trip to Perak is effortless and memorable.
-            </p>
+            <div className="p-6 pt-2 space-y-2">
+              <h3 className="font-serif text-xl font-bold text-white">Attentive Concierge Care</h3>
+              <p className="text-xs text-purple-200/80 leading-relaxed font-light">
+                From private cave tour recommendations to airport transfers, our staff ensures your trip to Perak is effortless and memorable.
+              </p>
+            </div>
           </div>
         </div>
       </div>

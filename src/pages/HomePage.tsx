@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, ArrowRight, Star, MapPin, Phone, Coffee, Sparkles, Shield, Clock, ChevronRight, Check, Heart, Compass } from 'lucide-react';
-import { HOTEL_DETAILS, ROOMS_DATA, GALLERY_DATA, EXPERIENCES } from '../data/hotelData';
+import { HOTEL_DETAILS, ROOMS_DATA, GALLERY_DATA, EXPERIENCES, heroImg, hotelLoungeImg } from '../data/hotelData';
 
 interface HomePageProps {
   setActivePage: (page: string) => void;
@@ -47,7 +47,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         {/* Background Image with Scrim Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/src/assets/images/hero_reno_hotel_1790847442817.jpg"
+            src={heroImg}
             alt="Reno Hotel Ipoh Exterior Facade"
             className="w-full h-full object-cover object-center scale-105 filter brightness-75"
             referrerPolicy="no-referrer"
@@ -167,7 +167,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden border border-amber-500/20 shadow-2xl group">
               <img
-                src="/src/assets/images/hotel_lounge_reno_1790847468712.jpg"
+                src={hotelLoungeImg}
                 alt="Reno Hotel Violet Lounge & Tea Parlor"
                 className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
@@ -332,22 +332,67 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {EXPERIENCES.map((exp) => (
-              <div
-                key={exp.id}
-                className="bg-[#1e0a38]/80 border border-purple-800/40 p-6 rounded-2xl space-y-3 hover:border-amber-400/40 transition-colors"
-              >
-                <div className="w-10 h-10 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400">
-                  <Sparkles className="w-5 h-5" />
+            {EXPERIENCES.map((exp) => {
+              const renderIcon = () => {
+                if (exp.icon === 'Coffee') return <Coffee className="w-4 h-4 text-amber-300" />;
+                if (exp.icon === 'MapPin') return <MapPin className="w-4 h-4 text-amber-300" />;
+                if (exp.icon === 'Concierge') return <Clock className="w-4 h-4 text-amber-300" />;
+                return <Sparkles className="w-4 h-4 text-amber-300" />;
+              };
+
+              return (
+                <div
+                  key={exp.id}
+                  className="glass-card glass-card-hover rounded-2xl overflow-hidden border border-purple-800/40 flex flex-col justify-between group hover:border-amber-400/50 transition-all duration-300 shadow-xl"
+                >
+                  <div>
+                    {/* Experience Image Header */}
+                    <div className="relative h-44 overflow-hidden">
+                      <img
+                        src={exp.image}
+                        alt={exp.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#140828] via-purple-950/20 to-transparent" />
+                      <div className="absolute top-3 left-3 w-9 h-9 rounded-xl bg-purple-950/80 border border-amber-400/40 backdrop-blur-md flex items-center justify-center shadow-lg">
+                        {renderIcon()}
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-5 space-y-2.5">
+                      <h3 className="font-serif text-lg font-bold text-white group-hover:text-amber-200 transition-colors">
+                        {exp.title}
+                      </h3>
+                      <p className="text-xs text-purple-200/85 leading-relaxed font-light">
+                        {exp.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-5 pt-0">
+                    <button
+                      onClick={() => {
+                        if (exp.id === 'exp-2') {
+                          onOpenConcierge();
+                        } else if (exp.id === 'exp-4') {
+                          setActivePage('contact');
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        } else {
+                          setActivePage('about-gallery');
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                      }}
+                      className="inline-flex items-center gap-1.5 text-xs text-amber-300 font-semibold hover:text-amber-200 transition-colors pt-2 border-t border-purple-800/30 w-full"
+                    >
+                      <span>Explore {exp.title.split(' ')[0]}</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
                 </div>
-                <h3 className="font-serif text-lg font-bold text-white">
-                  {exp.title}
-                </h3>
-                <p className="text-xs text-purple-200/80 leading-relaxed font-light">
-                  {exp.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* AI Concierge Banner Callout */}
