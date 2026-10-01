@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0c0414;
+    color: #f4effa;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Glassmorphism & Luxury Accent Styling */
+.glass-nav {
+  background: rgba(14, 5, 25, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background: rgba(28, 11, 48, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.glass-card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 12px 36px -10px rgba(126, 48, 225, 0.35);
+  transform: translateY(-4px);
+}
+
+.text-gold {
+  color: #e5c158;
+}
+
+.text-gold-light {
+  color: #f7e7a9;
+}
+
+.border-gold {
+  border-color: rgba(229, 193, 88, 0.3);
+}
+
+/* Shimmer animation for luxury gold buttons */
+@keyframes goldShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gold-gradient-btn {
+  background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa820a 100%);
+  background-size: 200% 100%;
+  color: #0e0517;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.gold-gradient-btn:hover {
+  background-position: 100% 0;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.purple-gradient-btn {
+  background: linear-gradient(135deg, #4f1d82 0%, #7e30e1 100%);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.purple-gradient-btn:hover {
+  background: linear-gradient(135deg, #6023a0 0%, #9142f4 100%);
+  box-shadow: 0 0 20px rgba(126, 48, 225, 0.4);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0414;
+}
+::-webkit-scrollbar-thumb {
+  background: #391461;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6222aa;
+}

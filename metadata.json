@@ -1,0 +1,6 @@
+{
+  "name": "Reno Hotel Ipoh — Boutique Luxury Hotel",
+  "description": "Experience unmatched boutique luxury at Reno Hotel Ipoh, Perak. Elegant suites, exceptional guest service, and prime access to Ipoh's heritage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
